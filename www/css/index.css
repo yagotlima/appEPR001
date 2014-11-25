@@ -69,6 +69,55 @@ body {
 	background-size: auto 30px;
 }
 
+ul#nav {
+	list-style:none;
+	width:135px; /* (40 + 5)px * 3 */
+	height:50px;
+	text-align:center;
+	margin: 15px auto;
+}
+
+ul#nav li a {
+	margin-left:5px;
+}
+
+ul#nav li a {
+	position:relative;
+	display:inline-block;
+	float:left;
+	width:40px;
+	height:40px;
+
+	background:#393;
+
+	border-radius:10px;
+	box-shadow: 2px 2px 2px #333;
+
+	text-align:center;
+	text-decoration:none;
+	color:#fff;
+}
+
+ul#nav li a.active {
+	background:#990;
+}
+
+ul#nav li a img{
+	position:absolute;
+	display:block;
+	top:50%;
+	left:50%;
+	transform:translateY(-50%);
+	margin-left:-17px;
+	max-width:34px;
+}
+
+ul#nav li a spam {
+	display:block;
+	margin-top:2px;
+	font:30px bold;
+}
+
 .drop-down {
 	display:none;
 }
