@@ -52,9 +52,10 @@ app.initialize();
 
 var viewAberta = '#pagina1';
 
-function abreView(view) {
+function abreView(view, titulo) {
 	$(viewAberta).animate({width: 'hide'}, function() {$(view).animate({width: 'show'});});
 	viewAberta = view;
+	$('#titulo').text(titulo);
 }
 
 function calculaTaxaJuros() {

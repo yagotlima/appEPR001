@@ -23,12 +23,12 @@
 		</div>
 		<div id="pagina1" class="container">
 			<ul id="nav">
-				<li><a class="active" href="javascript:void(0)" onclick="abreView('#pagina1')"><img src="img/cart-icon.png"/></a></li>
-				<li><a href="javascript:void(0)" onclick="abreView('#pagina2')"><spam>$</spam></a></li>
-				<li><a href="javascript:void(0)" onclick="abreView('#pagina3')"><img src="img/graphic-icon.png"/></a></li>
+				<li><a class="active" href="javascript:void(0)" onclick="abreView('#pagina1', 'A vista ou a prazo?')"><img src="img/cart-icon.png"/></a></li>
+				<li><a href="javascript:void(0)" onclick="abreView('#pagina2', 'Calculo de rendimentos')"><spam>$</spam></a></li>
+				<li><a href="javascript:void(0)" onclick="abreView('#pagina3', 'Taxas')"><img src="img/graphic-icon.png"/></a></li>
 			</ul>
-			<div id="content">
-				<form>
+			<div class="content">
+				<form id="form1">
 				<table>
 					<tr>
 						<td><label for="vista">Valor a vista:</label></td>
@@ -70,21 +70,57 @@
 		</div>
 		<div id="pagina2" class="container">
 			<ul id="nav">
-				<li><a href="javascript:void(0)" onclick="abreView('#pagina1')"><img src="img/cart-icon.png"/></a></li>
-				<li><a class="active" href="javascript:void(0)" onclick="abreView('#pagina2')"><spam>$</spam></a></li>
-				<li><a href="javascript:void(0)" onclick="abreView('#pagina3')"><img src="img/graphic-icon.png"/></a></li>
+				<li><a href="javascript:void(0)" onclick="abreView('#pagina1', 'A vista ou a prazo?')"><img src="img/cart-icon.png"/></a></li>
+				<li><a class="active" href="javascript:void(0)" onclick="abreView('#pagina2', 'Calculo de rendimentos')"><spam>$</spam></a></li>
+				<li><a href="javascript:void(0)" onclick="abreView('#pagina3', 'Taxas')"><img src="img/graphic-icon.png"/></a></li>
 			</ul>
-			<div id="content">
-				<h1>Pagina 2</h1>
+			<div class="content">
+				<form id="form2">
+				<table>
+					<tr>
+						<td><label for="vista">Taxa de juros:</label></td>
+						<td><input type="text" name="taxa" /></td>
+					</tr>
+					<tr>
+						<td><label for="entrada">Valor inicial:</label></td>
+						<td><input type="text" name="inicial" /></td>
+					</tr>
+					<tr>
+						<td><label for="vezes">Aplica&ccedil;&atilde;o:</label></td>
+						<td>
+							<table class="vezes"><tr>
+								<td><input type="text" name="vezes" class="vezes"/></td>
+								<td><label for="prazo"> x </label></td>
+								<td><input type="text" name="prazo" class="prazo"/></td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>Rendimento da Poupança:</td>
+						<td id="poupanca">5,9%</td>
+					</tr>
+					<tr>
+						<td>Taxa SELIC:</td>
+						<td id="selic">11%</td>
+					</tr>
+					<tr>
+						<td>Cart&atilde;o de cr&eacute;dito:</td>
+						<td id="taxa">-</td>
+					</tr>
+				</table>
+				<input type="button" value="Calcular" onClick="calcularendimentoAplicacao()">
+				</form>
 			</div>
 		</div>
 		<div id="pagina3" class="container">
 			<ul id="nav">
-				<li><a href="javascript:void(0)" onclick="abreView('#pagina1')"><img src="img/cart-icon.png"/></a></li>
-				<li><a href="javascript:void(0)" onclick="abreView('#pagina2')"><spam>$</spam></a></li>
-				<li><a class="active" href="javascript:void(0)" onclick="abreView('#pagina3')"><img src="img/graphic-icon.png"/></a></li>
+				<li><a href="javascript:void(0)" onclick="abreView('#pagina1', 'A vista ou a prazo?')"><img src="img/cart-icon.png"/></a></li>
+				<li><a href="javascript:void(0)" onclick="abreView('#pagina2', 'Calculo de rendimentos')"><spam>$</spam></a></li>
+				<li><a class="active" href="javascript:void(0)" onclick="abreView('#pagina3', 'Taxas')"><img src="img/graphic-icon.png"/></a></li>
 			</ul>
-			<div id="content">
+			<div class="content">
 				<h1>Pagina 3</h1>
 			</div>
 		</div>
