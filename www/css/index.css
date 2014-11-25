@@ -147,6 +147,7 @@ ul#nav li a spam {
 
 .content form table tr td {
 	width:105px;
+	text-align:center;
 }
 
 .content form table tr td ~ td{
