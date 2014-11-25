@@ -188,9 +188,24 @@ ul#nav li a spam {
 }
 
 .content form input[type="button"] {
+	position:absolute;
+	bottom:30px;
+	left:50%;
 	display:block;
 	width:8em;
-	margin:auto;
+	margin-left:-4em;
+}
+
+#dataTaxas {
+	position:absolute;
+	bottom:20px;
+	left:50%;
+	display:block;
+	width:8em;
+	margin-left:-4em;
+
+	font-size:9px;
+	text-align:center;
 }
 
 #pagina2, #pagina3 {
@@ -208,12 +223,6 @@ h1 {
     overflow:visible;
     padding:0px;
     text-align:center;
-}
-
-#dataTaxas {
-	display:block;
-	text-align:center;
-	font-size:9px;
 }
 
 .event {
