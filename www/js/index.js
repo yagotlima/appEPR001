@@ -49,3 +49,15 @@ var app = {
 };
 
 app.initialize();
+
+var viewAberta = '#pagina1';
+
+function abreView(view) {
+	$(viewAberta).animate({width: 'hide'}, function() {$(view).animate({width: 'show'});});
+	viewAberta = view;
+}
+
+function calculaTaxaJuros() {
+	
+}
+

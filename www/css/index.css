@@ -29,7 +29,8 @@ body {
     background-attachment:fixed;
 	*/
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
+    font-size:14px;
+	color:white;
     height:100%;
     margin:0px;
     padding:0px;
@@ -48,6 +49,7 @@ body {
 
 	font: 40px bold;
 	text-align:center;
+	color:#333;
 }
 
 #cabecalho #titulo{
@@ -107,15 +109,91 @@ ul#nav li a img{
 	display:block;
 	top:50%;
 	left:50%;
-	transform:translateY(-50%);
-	margin-left:-17px;
-	max-width:34px;
+
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+
+	margin-left:-15px;
+	max-width:30px;
 }
 
 ul#nav li a spam {
 	display:block;
 	margin-top:2px;
 	font:30px bold;
+}
+
+.content {
+	width:100%;
+	margin:5px;
+}
+
+.content form {
+	width:100%;
+}
+
+.content form table {
+	table-layout:fixed;
+	width:90%;
+	margin:auto;
+	border:0;
+	border-collapse:collapse;
+}
+
+.content form table tr {
+	width:auto;
+}
+
+.content form table tr td {
+	width:105px;
+}
+
+.content form table tr td ~ td{
+	width:auto;
+}
+
+.content form label {
+	color:white;
+}
+
+.content form input {
+	width:100%;
+}
+
+.content form tr td table.vezes {
+	margin:0;
+	padding:0;
+}
+
+.content form tr td table.vezes tr td {
+	width:3em;
+}
+
+.content form tr td table.vezes tr td input {
+	width:2em;
+}
+
+.content form tr td table.vezes tr td ~ td {
+	width:1em;
+}
+
+.content form tr td table.vezes tr td ~ td ~ td {
+	width:auto;
+}
+
+.content form tr td table.vezes tr td ~ td ~ td input {
+	width:100%;
+}
+
+.content form input[type="button"] {
+	display:block;
+	width:8em;
+	margin:auto;
+}
+
+#pagina2, #pagina3 {
+	display:none;
 }
 
 .drop-down {
