@@ -24,7 +24,7 @@
 		<div id="pagina1" class="container">
 			<ul id="nav">
 				<li><a class="active" href="javascript:void(0)" onclick="abreView('#pagina1', 'A vista ou a prazo?')"><img src="img/cart-icon.png"/></a></li>
-				<li><a href="javascript:void(0)" onclick="abreView('#pagina2', 'Calculo de rendimentos')"><spam>$</spam></a></li>
+				<li><a href="javascript:void(0)" onclick="abreView('#pagina2', 'Calcular rendimentos')"><spam>$</spam></a></li>
 				<li><a href="javascript:void(0)" onclick="abreView('#pagina3', 'Taxas')"><img src="img/graphic-icon.png"/></a></li>
 			</ul>
 			<div class="content">
@@ -71,7 +71,7 @@
 		<div id="pagina2" class="container">
 			<ul id="nav">
 				<li><a href="javascript:void(0)" onclick="abreView('#pagina1', 'A vista ou a prazo?')"><img src="img/cart-icon.png"/></a></li>
-				<li><a class="active" href="javascript:void(0)" onclick="abreView('#pagina2', 'Calculo de rendimentos')"><spam>$</spam></a></li>
+				<li><a class="active" href="javascript:void(0)" onclick="abreView('#pagina2', 'Calcular rendimentos')"><spam>$</spam></a></li>
 				<li><a href="javascript:void(0)" onclick="abreView('#pagina3', 'Taxas')"><img src="img/graphic-icon.png"/></a></li>
 			</ul>
 			<div class="content">
@@ -117,11 +117,28 @@
 		<div id="pagina3" class="container">
 			<ul id="nav">
 				<li><a href="javascript:void(0)" onclick="abreView('#pagina1', 'A vista ou a prazo?')"><img src="img/cart-icon.png"/></a></li>
-				<li><a href="javascript:void(0)" onclick="abreView('#pagina2', 'Calculo de rendimentos')"><spam>$</spam></a></li>
+				<li><a href="javascript:void(0)" onclick="abreView('#pagina2', 'Calcular rendimentos')"><spam>$</spam></a></li>
 				<li><a class="active" href="javascript:void(0)" onclick="abreView('#pagina3', 'Taxas')"><img src="img/graphic-icon.png"/></a></li>
 			</ul>
 			<div class="content">
-				<h1>Pagina 3</h1>
+				<form>
+				<table>
+					<tr>
+						<td>Rendimento da Poupança:</td>
+						<td id="poupanca">5,9%</td>
+					</tr>
+					<tr>
+						<td>Taxa SELIC:</td>
+						<td id="selic">11%</td>
+					</tr>
+					<tr>
+						<td>Cart&atilde;o de cr&eacute;dito:</td>
+						<td id="taxa">-</td>
+					</tr>
+				</table>
+				<input type="button" value="Atualizar" onClick="atualizaTaxas()">
+				<spam id="dataTaxas">Atualizado em - </spam>
+				</form>
 			</div>
 		</div>
     </div>
