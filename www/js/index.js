@@ -114,20 +114,15 @@ function calculaRendimentos() {
 
 function atualizaTaxas() {
 	setTimeout(function(){
-		$('dataTaxas').text(jQuery.now());
-	}, 5000);
+		$('.poupanca').each(function() {
+			$( this ).text('7.74%');
+		});
+		$('.selic').each(function() {
+			$( this ).text('12.01%');
+		});
 
-	/*var str;
-	
-	$.ajax({
-		url: "https://www.google.com.br",
-		async: false,
-		crossDomain: true
-	}).done(function( data ) {
-		$('dataTaxas').text(data);
-		//str = $(data).filter('div#cotacao-page td ~ td').first().html();
-		//$('dataTaxas').text(str);
-	});*/
+		$('#dataTaxas').text('Atualizado em ' + new Date($.now()).toLocaleString());
+	}, 2000);
 }
 
 
