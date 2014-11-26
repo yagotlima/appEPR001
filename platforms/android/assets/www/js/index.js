@@ -77,7 +77,7 @@ function calculaTaxaJuros() {
         erro = pv - valorPresente;
 
         if(Math.abs(erro) < PRECISAO || Math.abs(erro - erroAnterior) < PRECISAO){
-            $('#taxa').text((taxa*100).toFixed(3) + "%");
+            //$('#taxa').text((taxa*100).toFixed(3) + "%");
             break;
         }
         
@@ -87,9 +87,9 @@ function calculaTaxaJuros() {
 			min = taxa;
     }
 
-	taxa = Math.pow(taxa + 1, 12) -1 //Taxa ao ano
+	taxa = (Math.pow(taxa + 1, 12) - 1)*100 //Taxa ao ano em %
 
-	$('#form1 #taxa').text(taxa);
+	$('#form1 #taxa').text(taxa.toFixed(3) + "%");
 	$('#form1 #resultado').text(taxa > parseFloat($('#form1 #poupanca').html()) ? 'Compre a vista!' : 'Compre a prazo!' );
 	$('#form1 #resultado').css('color', '#f00');
 }
@@ -109,9 +109,31 @@ function calculaRendimentos() {
     rendimento = (montante2 + montante1) - capitalInicial - periodo*aplicacoes;
     total = montante1 + montante2;
 
-	$('#form2 #resultado').text('Valor ao final da aplicação: ' + total);
+	$('#form2 #resultado').text('Valor ao final da aplicação: R$' + total.toFixed(2));
 }
 
 function atualizaTaxas() {
+	setTimeout(function(){
+		$('dataTaxas').text(jQuery.now());
+	}, 5000);
+
+	/*var str;
+	
+	$.ajax({
+		url: "https://www.google.com.br",
+		async: false,
+		crossDomain: true
+	}).done(function( data ) {
+		$('dataTaxas').text(data);
+		//str = $(data).filter('div#cotacao-page td ~ td').first().html();
+		//$('dataTaxas').text(str);
+	});*/
 }
+
+
+
+
+
+
+
 
