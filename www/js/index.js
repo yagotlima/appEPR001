@@ -89,7 +89,7 @@ function calculaTaxaJuros() {
 
 	taxa = Math.pow(taxa + 1, 12) -1 //Taxa ao ano
 
-	$('#form1 #taxa').text(taxa);
+	$('#form1 #taxa').text((taxa*100).toFixed(3) + '%');
 	$('#form1 #resultado').text(taxa > parseFloat($('#form1 #poupanca').html()) ? 'Compre a vista!' : 'Compre a prazo!' );
 	$('#form1 #resultado').css('color', '#f00');
 }
@@ -109,9 +109,26 @@ function calculaRendimentos() {
     rendimento = (montante2 + montante1) - capitalInicial - periodo*aplicacoes;
     total = montante1 + montante2;
 
-	$('#form2 #resultado').text('Valor ao final da aplicação: R$' + total);
+	$('#form2 #resultado').text('Valor ao final da aplicação: R$' + total.toFixed(2));
 }
 
 function atualizaTaxas() {
+	var str;
+	
+	$.ajax({
+		url: "http://www4.bcb.gov.br/pec/poupanca/poupanca.asp",
+		async: false,
+		crossDomain: true
+	}).done(function( data ) {
+		str = $(data).filter('table[summary="Esta tabela contém o histórico da Poupança"] td').last().html();
+		$('dataTaxas').text(str);
+	});
 }
+
+
+
+
+
+
+
 
