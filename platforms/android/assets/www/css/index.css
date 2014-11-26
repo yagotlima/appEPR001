@@ -189,7 +189,7 @@ ul#nav li a spam {
 
 .content form input[type="button"] {
 	position:absolute;
-	bottom:30px;
+	bottom:50px;
 	left:50%;
 	display:block;
 	width:8em;
@@ -198,7 +198,7 @@ ul#nav li a spam {
 
 #dataTaxas {
 	position:absolute;
-	bottom:20px;
+	bottom:40px;
 	left:50%;
 	display:block;
 	width:8em;
@@ -206,6 +206,7 @@ ul#nav li a spam {
 
 	font-size:9px;
 	text-align:center;
+	color:#f00;
 }
 
 #pagina2, #pagina3 {
