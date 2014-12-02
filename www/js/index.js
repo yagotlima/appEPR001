@@ -52,6 +52,14 @@ app.initialize();
 
 var viewAberta = '#pagina1';
 
+function showSpinner(){
+	$('#spinner').stop().fadeIn();
+}
+
+function hideSpinner(){
+	$('#spinner').stop().fadeOut();
+}
+
 function abreView(view, titulo) {
 	$(viewAberta).animate({width: 'hide'}, function() {$(view).animate({width: 'show'});});
 	viewAberta = view;
@@ -59,6 +67,8 @@ function abreView(view, titulo) {
 }
 
 function calculaTaxaJuros() {
+	showSpinner();
+
     var pv = $('#form1 input[name=vista]').val() - $('#form1 input[name=entrada]').val();
     var pmt = $('#form1 input[name=prazo]').val();
     var n = $('#form1 input[name=vezes]').val();
@@ -92,9 +102,13 @@ function calculaTaxaJuros() {
 	$('#form1 #taxa').text(taxa.toFixed(3) + "%");
 	$('#form1 #resultado').text(taxa > parseFloat($('#form1 #poupanca').html()) ? 'Compre a vista!' : 'Compre a prazo!' );
 	$('#form1 #resultado').css('color', '#f00');
+
+	hideSpinner();
 }
 
 function calculaRendimentos() {
+	showSpinner();
+
     var taxa = $('#form2 input[name=taxa]').val() / 100;
     var capitalInicial = $('#form2 input[name=inicial]').val();
     var periodo = $('#form2 input[name=vezes]').val();
@@ -110,18 +124,24 @@ function calculaRendimentos() {
     total = montante1 + montante2;
 
 	$('#form2 #resultado').text('Valor ao final da aplicação: R$' + total.toFixed(2));
+
+	hideSpinner();
 }
 
 function atualizaTaxas() {
+	showSpinner();
+
 	setTimeout(function(){
 		$('.poupanca').each(function() {
 			$( this ).text('7.74%');
 		});
 		$('.selic').each(function() {
-			$( this ).text('12.01%');
+			$( this ).text('11.15%');
 		});
 
 		$('#dataTaxas').text('Atualizado em ' + new Date($.now()).toLocaleString());
+
+		hideSpinner();
 	}, 2000);
 }
 
