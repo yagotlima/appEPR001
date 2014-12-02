@@ -126,7 +126,7 @@ ul#nav li a spam {
 
 .content {
 	width:100%;
-	margin:5px;
+	margin:0px;
 }
 
 .content form {
@@ -160,6 +160,7 @@ ul#nav li a spam {
 
 .content form input {
 	width:100%;
+	max-width: 123px;
 }
 
 .content form tr td table.vezes {
@@ -218,7 +219,7 @@ ul#nav li a spam {
 }
 
 h1 {
-    font-size:24px;
+    font-size:18px;
     font-weight:normal;
     margin:0px;
     overflow:visible;
