@@ -1,5 +1,8 @@
-#Arquivos Temporarios
+]#Arquivos Temporarios
 *~
+
+#Arquivos build
+platforms/*
 
 # ANDROID / ECLIPSE
  
