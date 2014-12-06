@@ -1,4 +1,7 @@
-]#Arquivos Temporarios
+#Diretorio contendo servidor estatico
+json/
+
+#Arquivos Temporarios
 *~
 
 #Arquivos build

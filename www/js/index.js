@@ -172,21 +172,32 @@ function calculaRendimentos() {
     hideSpinner();
 }
 
+function atualizaTaxasNaPagina(poupanca, selic, data) {
+	$('.poupanca').each(function() {
+		$( this ).text(poupanca);
+	});
+	$('.selic').each(function() {
+		$( this ).text(selic);
+	});
+
+	//$('#dataTaxas').text('Atualizado em ' + new Date($.now()).toLocaleString());
+	$('#dataTaxas').text('Atualizado em ' + data); //TODO: Inserir uma mensagem mais coerente.
+}
+
 function atualizaTaxas() {
-	showSpinner();
-
-	setTimeout(function(){
-		$('.poupanca').each(function() {
-			$( this ).text('7.74%');
-		});
-		$('.selic').each(function() {
-			$( this ).text('11.15%');
-		});
-
-		$('#dataTaxas').text('Atualizado em ' + new Date($.now()).toLocaleString());
-
-		hideSpinner();
-	}, 2000);
+	$.ajax({
+		url: "http://epr001-ytlima.rhcloud.com/taxas.json",
+		crossDomain: true,
+		dataType: "json",
+		beforeSend: function() {showSpinner();},
+		complete: function() {hideSpinner();},
+		error: function() {
+			alert('Não foi possivel atualizar as taxas de juros.\nPor favor, verifique sua conexão');
+		},
+		success: function(resposta) {
+			atualizaTaxasNaPagina(resposta.poupanca, resposta.selic, resposta.data);
+		}
+	});
 }
 
 
