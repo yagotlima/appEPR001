@@ -195,15 +195,23 @@ function atualizaTaxas() {
 			alert('Não foi possivel atualizar as taxas de juros.\nPor favor, verifique sua conexão');
 		},
 		success: function(resposta) {
+            var jsonStr = JSON.stringify(resposta);
 			atualizaTaxasNaPagina(resposta.poupanca, resposta.selic, resposta.data);
+            localStorage.setItem('taxas', jsonStr);
 		}
 	});
 }
 
+function inicializaTaxas(){
+    showSpinner();
 
+    var taxasStr = localStorage.getItem('taxas');
+    var taxas;
+    if(taxasStr){
+        taxas = JSON.parse(taxasStr);
+        atualizaTaxasNaPagina(taxas.poupanca, taxas.selic, taxas.data);
+    }
 
-
-
-
-
+    hideSpinner();
+}
 
