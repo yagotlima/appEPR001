@@ -33,19 +33,19 @@
 				<table>
 					<tr>
 						<td><label for="vista">Valor a vista:</label></td>
-						<td><input type="text" name="vista" /></td>
+						<td><input type="text" name="vista" placeholder="0"/></td>
 					</tr>
 					<tr>
 						<td><label for="entrada">Valor entrada:</label></td>
-						<td><input type="text" name="entrada" /></td>
+						<td><input type="text" name="entrada" placeholder="0"/></td>
 					</tr>
 					<tr>
 						<td><label for="vezes">Valor a prazo:</label></td>
 						<td>
 							<table class="vezes"><tr>
-								<td><input type="text" name="vezes" class="vezes"/></td>
+								<td><input type="text" name="vezes" class="vezes" placeholder="0"/></td>
 								<td><label for="prazo"> x </label></td>
-								<td><input type="text" name="prazo" class="prazo"/></td>
+								<td><input type="text" name="prazo" class="prazo" placeholder="0"/></td>
 							</tr></table>
 						</td>
 					</tr>
@@ -80,24 +80,27 @@
 				<table>
 					<tr>
 						<td><label for="vista">Taxa de juros:</label></td>
-						<td><input type="text" name="taxa" /></td>
+						<td><input type="text" name="taxa" placeholder="0"/></td>
 					</tr>
 					<tr>
 						<td><label for="entrada">Valor inicial:</label></td>
-						<td><input type="text" name="inicial" /></td>
+						<td><input type="text" name="inicial" placeholder="0"/></td>
 					</tr>
 					<tr>
-						<td><label for="vezes">Aplica&ccedil;&atilde;o:</label></td>
-						<td>
-							<table class="vezes"><tr>
-								<td><input type="text" name="vezes" class="vezes"/></td>
-								<td><label for="prazo"> x </label></td>
-								<td><input type="text" name="prazo" class="prazo"/></td>
-							</tr></table>
-						</td>
+						<td><label for="vezes">Depósitos mensais:</label></td>
+						<td><input type="text" name="prazo" class="prazo" placeholder="0"/></td>
+					</tr>
+					<tr>
+						<td><label for="saida">Retiradas mensais:</label></td>
+						<td><input type="text" name="retiradas" placeholder="0"/></td>
+					</tr>
+					<tr>
+						<td><label for="tempo">Períodos:</label></td>
+						<td><input type="number" name="periodos" size="3" placeholder="0"/></td>
 					</tr>
 				</table>
 				<h1 id="resultado"></h1>
+				<h1 id="resultado2"></h1>
 				<table>
 					<tr>
 						<td>Rendimento da Poupança:</td>
@@ -106,10 +109,6 @@
 					<tr>
 						<td>Taxa SELIC:</td>
 						<td id="selic" class="selic">-</td>
-					</tr>
-					<tr>
-						<td>Cart&atilde;o de cr&eacute;dito:</td>
-						<td id="taxa">-</td>
 					</tr>
 				</table>
 				<input type="button" value="Calcular" onClick="calculaRendimentos()">
