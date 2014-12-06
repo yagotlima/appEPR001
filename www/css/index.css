@@ -81,6 +81,17 @@ body {
 	background-size: auto 30px;
 }
 
+#menu-principal {
+	position:absolute;
+	top:40px;
+	right:0;
+}
+
+.drop-down {
+	display:none;
+	z-index: 50;
+}
+
 ul#nav {
 	list-style:none;
 	width:135px; /* (40 + 5)px * 3 */
@@ -221,10 +232,6 @@ ul#nav li a spam {
 }
 
 #pagina2, #pagina3 {
-	display:none;
-}
-
-.drop-down {
 	display:none;
 }
 

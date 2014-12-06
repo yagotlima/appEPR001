@@ -10,18 +10,37 @@
         <title>A vista ou a prazo?</title>
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+		window.onclick = function(e) {
+			var eventTarget;
+			// Inicializa instancia do envento se não for passada como argumento
+			if (!e)
+				var e = window.event;
+			
+			if (e.target) //Netscape syntax
+				eventTarget = e.target;
+			else if (e.srcElement) //Microsoft syntax
+				eventTarget = e.srcElement;
+			if (eventTarget.nodeType == 3) // defeat Safari bug
+				eventTarget = eventTarget.parentNode;			
+
+			if(eventTarget.id != "menu-principal-button")
+				fechaMenuPrincipal();
+		}
+	</script>
     </head>
     <body>
 		<div id="spinner"></div>
 		<div id="cabecalho">
 			<h1 id="titulo">A vista ou a prazo?</h1>
-			<a class="menu-button" href="javascript:void(0)" onclick="abreMenuPrincipal()"></a>
-			<ul id="menu-principal" class="drop-down">
-				<li><a href="javascript:void(0)" onclick="opcao()">Op&ccedil;&atilde;o 1</a></li>
-				<li><a href="javascript:void(0)" onclick="opcao()">Op&ccedil;&atilde;o 2</a></li>
-				<li><a href="javascript:void(0)" onclick="opcao()">Op&ccedil;&atilde;o 3</a></li>
-			</ul>
+			<a id="menu-principal-button" class="menu-button" href="javascript:void(0)" onclick="abreMenuPrincipal()"></a>
 		</div>
+		<ul id="menu-principal" class="drop-down">
+			<li><a href="javascript:void(0)" onclick="abreView('#pagina1', 'A vista ou a prazo?')">Parcelamento</a></li>
+			<li><a href="javascript:void(0)" onclick="abreView('#pagina2', 'Calcular rendimentos')">Rendimentos</a></li>
+			<li><a href="javascript:void(0)" onclick="abreView('#pagina3', 'Taxas')">Taxas</a></li>
+			<li><a href="javascript:void(0)" onclick="sobre()">Sobre</a></li>
+		</ul>
 		<div id="pagina1" class="container">
 			<ul id="nav">
 				<li><a class="active" href="javascript:void(0)" onclick="abreView('#pagina1', 'A vista ou a prazo?')"><img src="img/cart-icon.png"/></a></li>

@@ -50,6 +50,18 @@ var app = {
 
 app.initialize();
 
+function sobre() {
+	alert('Mensagem com informações sobre o aplicativo.'); //TODO
+}
+
+function abreMenuPrincipal(){
+	$('#menu-principal').stop().slideDown();
+}
+
+function fechaMenuPrincipal(){
+	$('#menu-principal').stop().slideUp();
+}
+
 var viewAberta = '#pagina1';
 
 function showSpinner(){
